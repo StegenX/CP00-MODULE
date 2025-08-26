@@ -17,3 +17,10 @@ megaphone : $(OBJ)
 clean : 
 	rm -f $(OBJ)
 
+fclean : clean
+	rm -f megaphone
+
+re : all clean
+
+.PHONEY : all clean fclean re
+
