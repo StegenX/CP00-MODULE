@@ -52,7 +52,9 @@ void PhoneBook::lookFor() {
     while (true)
     {
         std::cout << "Choose Index : ";
-        std::cin >> input;
+        if (!getline(std::cin, input))
+            exit(EXIT_SUCCESS);
+        
         std::stringstream(input) >> Index;
 
         if (checkNumber(input) && Index >= 0 && Index < 8) {
@@ -80,32 +82,38 @@ void PhoneBook::add() {
     std::string name;
 
     std::cout << "First Name: ";
-    getline(std::cin, name);
+    if(!getline(std::cin, name))
+        exit(0) ;
     obj[index].set_First_Name(name);
 
     std::cout << "Last Name: ";
-    getline(std::cin, name);
+    if(!getline(std::cin, name))
+        exit(0) ;
     obj[index].set_Last_Name(name);
 
     std::cout << "Nickname: ";
-    getline(std::cin, name);
+    if(!getline(std::cin, name))
+        exit(0) ;
     obj[index].set_NickName(name);
     
     std::cout << "Phone Number: ";
-    getline(std::cin, name);
+    if(!getline(std::cin, name))
+        exit(0) ;
     while (1)
     {
         if (checkNumber(name))
         {
             obj[index].set_phone_number(name);
-            break;
+            break ;
         }
         std::cout << "Enter a valid number : ";
-        getline(std::cin, name);
+        if(!getline(std::cin, name))
+            exit(0) ;
     }
 
     std::cout << "Darkest Secret: ";
-    getline(std::cin, name);
+    if(!getline(std::cin, name))
+        exit(0) ;
     obj[index].set_darkest_secret(name);
 
     incIndex();
