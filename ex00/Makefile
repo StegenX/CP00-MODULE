@@ -1,4 +1,4 @@
-C++ = g++
+C++ = c++
 
 CFLAGS = -Wall -Wextra -Werror
 
