@@ -1,5 +1,7 @@
 C++ = c++
 
+CFLAGS = -Wall -Wextra -Werror
+
 NAME = account
 
 SRC = Account.cpp tests.cpp
@@ -8,8 +10,6 @@ OBJ = $(SRC:.cpp=.o)
 
 %.o : %.cpp
 	$(C++) $(CFLAGS) -c $< -o $@
-
-CFLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
 
